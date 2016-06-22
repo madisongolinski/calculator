@@ -18,53 +18,75 @@ class ViewController: UIViewController {
     @IBOutlet weak var divide: UILabel!
     @IBOutlet weak var add: UILabel!
     @IBOutlet weak var subtract: UILabel!
+    
+    var equationState: String = String()
    
-    @IBAction func changeFunction(sender: AnyObject) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        equationState = "Subtraction"
+        
+        changeFunction(self)
+    }
+    
+    @IBAction func changeFunction(sender: AnyObject) {
+        if equationState == "Multiplication" {
+            multiply.textColor = UIColor.blackColor()
+            divide.textColor = UIColor.redColor()
+            equationState = "Division"
+        }
+        else if equationState == "Division" {
+            divide.textColor = UIColor.blackColor()
+            add.textColor = UIColor.redColor()
+            equationState = "Addition"
+        }
+        else if equationState == "Addition" {
+            add.textColor = UIColor.blackColor()
+            subtract.textColor = UIColor.redColor()
+            equationState = "Subtraction"
+        }
+        else if equationState == "Subtraction" {
+            subtract.textColor = UIColor.blackColor()
+            multiply.textColor = UIColor.redColor()
+            equationState = "Multiplication"
+        }
     }
     
     
     @IBAction func calculate(sender: AnyObject) {
         var firstValue = Int(Value1.text!)!
         var secondValue = Int(Value2.text!)!
-    
-        if let multiply = Int(multiply.text!) {
-                var result = Int(ResultLabel.text!)!
-                result = firstValue * secondValue
-            
-            ResultLabel.text = "The answer is \(result)!"
-        } else {
-            if var divide = Int(divide.text!)! {
-                var result = Int(ResultLabel.text!)!
-                result = firstValue / secondValue
-            
-            ResultLabel.text = "The answer is \(result)!"
-        } else {
-            if var add = Int(add.text!)! {
-                var result = Int(ResultLabel.text!)!
-                result = firstValue + secondValue
-                    
-            ResultLabel.text = "The answer is \(result)!"
-               
-        } else {
-            if var subtract = Int(subtract.text!)! {
-                var result = Int(ResultLabel.text!)!
-                result = firstValue - secondValue
-                
-            ResultLabel.text = "The answer is \(result)!"
-                    }
-                }
-            }
-        }
-    
-    
-    }
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //        if let multiply = Int(multiply.text!) {
+        //                var result = Int(ResultLabel.text!)!
+        //                result = firstValue * secondValue
+        //
+        //            ResultLabel.text = "The answer is \(result)!"
+        //        } else {
+        //            if var divide = Int(divide.text!)! {
+        //                var result = Int(ResultLabel.text!)!
+        //                result = firstValue / secondValue
+        //
+        //            ResultLabel.text = "The answer is \(result)!"
+        //        } else {
+        //            if var add = Int(add.text!)! {
+        //                var result = Int(ResultLabel.text!)!
+        //                result = firstValue + secondValue
+        //
+        //            ResultLabel.text = "The answer is \(result)!"
+        //
+        //        } else {
+        //            if var subtract = Int(subtract.text!)! {
+        //                var result = Int(ResultLabel.text!)!
+        //                result = firstValue - secondValue
+        //                
+        //            ResultLabel.text = "The answer is \(result)!"
+        //                    }
+        //                }
+        //            }
+        //        }
+        
+        
     }
     
     @IBAction func clearFields(sender: AnyObject) {
