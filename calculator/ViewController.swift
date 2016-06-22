@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtract: UILabel!
    
     @IBAction func changeFunction(sender: AnyObject) {
+      var equationState String = String()
         
     }
     
@@ -65,7 +66,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+            equationState = "Multiply"
+        
+    
+    
+    
+    
     }
+    
+    
+    
+    
     
     @IBAction func clearFields(sender: AnyObject) {
         Value1.text = ""
