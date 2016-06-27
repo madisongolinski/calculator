@@ -20,36 +20,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtract: UILabel!
     
     var equationState: String = String()
+    
+    var labels:[UILabel]=[]
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        equationState = "Subtraction"
+        labels.append(multiply)
+        labels.append(divide)
+        labels.append(add)
+        labels.append(subtract)
+        
+        equationState = "-"
+        
         
         changeFunction(self)
+        
+        
+        let testView: UIView = UIView()
+        testView.frame = CGRectMake((view.frame.width-300)/2, view.frame.height-100, 300, 60)
+        testView.backgroundColor = UIColor.blackColor()
+        view.addSubview(testView)
+        
+        let redview: UIView = UIView()
+        redview.frame = CGRectMake(0, 0, 60, 60)
+        redview.backgroundColor = UIColor.redColor()
+        testView.addSubview(redview)
     }
     
     @IBAction func changeFunction(sender: AnyObject) {
-        if equationState == "Multiplication" {
-            multiply.textColor = UIColor.blackColor()
-            divide.textColor = UIColor.redColor()
-            equationState = "Division"
+        
+        switch equationState {
+            case "*":
+                equationState = "/"
+            case "/":
+                equationState = "+"
+            case "+":
+                equationState = "-"
+            case "-":
+                equationState = "*"
+            default:
+                print("")
         }
-        else if equationState == "Division" {
-            divide.textColor = UIColor.blackColor()
-            add.textColor = UIColor.redColor()
-            equationState = "Addition"
+        
+        for i in labels {
+            if i.text == equationState {
+                i.textColor = UIColor.redColor()
+            }
+            else {
+                i.textColor = UIColor.blackColor()
+            }
         }
-        else if equationState == "Addition" {
-            add.textColor = UIColor.blackColor()
-            subtract.textColor = UIColor.redColor()
-            equationState = "Subtraction"
-        }
-        else if equationState == "Subtraction" {
-            subtract.textColor = UIColor.blackColor()
-            multiply.textColor = UIColor.redColor()
-            equationState = "Multiplication"
-        }
+        
+
     }
     
     
