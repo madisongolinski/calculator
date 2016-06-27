@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         let testView: UIView = UIView()
         testView.frame = CGRectMake((view.frame.width-300)/2, view.frame.height-100, 300, 60)
         testView.backgroundColor = UIColor.blackColor()
-        view.addSubview(testView)
+//        view.addSubview(testView)
         
         let redview: UIView = UIView()
         redview.frame = CGRectMake(0, 0, 60, 60)
@@ -75,42 +75,41 @@ class ViewController: UIViewController {
 
     }
     
-    
     @IBAction func calculate(sender: AnyObject) {
         var firstValue = Int(Value1.text!)!
         var secondValue = Int(Value2.text!)!
         
-        //        if let multiply = Int(multiply.text!) {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue * secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //        } else {
-        //            if var divide = Int(divide.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue / secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //        } else {
-        //            if var add = Int(add.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue + secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //
-        //        } else {
-        //            if var subtract = Int(subtract.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue - secondValue
-        //                
-        //            ResultLabel.text = "The answer is \(result)!"
-        //                    }
-        //                }
-        //            }
-        //        }
+                if equationState == "*" {
+                       let result = firstValue * secondValue
         
+                    ResultLabel.text = "The answer is \(result)!"
+                } else {
+                    if equationState == "/" {
+                        let result = firstValue / secondValue
         
+                    ResultLabel.text = "The answer is \(result)!"
+                } else {
+                    if equationState == "+" {
+                        let result = firstValue + secondValue
+        
+                    ResultLabel.text = "The answer is \(result)!"
+        
+                } else {
+                    if equationState == "-" {
+                        let result = firstValue - secondValue
+                        
+                    ResultLabel.text = "The answer is \(result)!"
+                            }
+                        }
+                    }
+                }
+        
+
     }
+    
+    
+    
+    
     
     @IBAction func clearFields(sender: AnyObject) {
         Value1.text = ""
