@@ -56,34 +56,30 @@ class ViewController: UIViewController {
         var firstValue = Int(Value1.text!)!
         var secondValue = Int(Value2.text!)!
         
-        //        if let multiply = Int(multiply.text!) {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue * secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //        } else {
-        //            if var divide = Int(divide.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue / secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //        } else {
-        //            if var add = Int(add.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue + secondValue
-        //
-        //            ResultLabel.text = "The answer is \(result)!"
-        //
-        //        } else {
-        //            if var subtract = Int(subtract.text!)! {
-        //                var result = Int(ResultLabel.text!)!
-        //                result = firstValue - secondValue
-        //                
-        //            ResultLabel.text = "The answer is \(result)!"
-        //                    }
-        //                }
-        //            }
-        //        }
+                if equationState == "Multiplication" {
+                       let result = firstValue * secondValue
+        
+                    ResultLabel.text = "The answer is \(result)!"
+                } else {
+                    if equationState == "Division" {
+                        let result = firstValue / secondValue
+        
+                    ResultLabel.text = "The answer is \(result)!"
+                } else {
+                    if equationState == "Addition" {
+                        let result = firstValue + secondValue
+        
+                    ResultLabel.text = "The answer is \(result)!"
+        
+                } else {
+                    if equationState == "Subtraction" {
+                        let result = firstValue - secondValue
+                        
+                    ResultLabel.text = "The answer is \(result)!"
+                            }
+                        }
+                    }
+                }
         
 
     }
