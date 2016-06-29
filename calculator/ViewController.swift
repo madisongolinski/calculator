@@ -121,8 +121,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func next(sender: AnyObject) {
-    let viewControllerToGoTo = ViewController2()
-        self; presentViewController(ViewController2, animated: true, completion: nil)
+    let viewControllerToGoTo = new()
+        self.presentViewController(new, animated: true, completion: nil)
     
     }
 
