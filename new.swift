@@ -20,7 +20,7 @@ class new: UIViewController {
         lbl1.backgroundColor=[UIColor clearColor];
         lbl1.textColor=[UIColor whiteColor];
         lbl1.userInteractionEnabled=NO;
-        lbl1.text= @"Calculator";
+        lbl1.text = @"Calculator";
         [self.view addSubview:lbl1];
         
         let sampleTextField = UITextField(frame: CGRectMake(20, 100, 300, 40))
@@ -40,7 +40,7 @@ class new: UIViewController {
         lbl2.backgroundColor=[UIColor clearColor];
         lbl2.textColor=[UIColor whiteColor];
         lbl2.userInteractionEnabled=NO;
-        lbl2.text= @"*";
+        lbl2.text = @"*";
         lbl2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         [self.view addSubview:lbl1];
         
@@ -107,7 +107,7 @@ class new: UIViewController {
         // Do any additional setup after loading the view.
     
 
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
