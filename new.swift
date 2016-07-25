@@ -32,7 +32,6 @@ class new: UIViewController {
         sampleTextField.returnKeyType = UIReturnKeyType.Done
         sampleTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         sampleTextField.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        sampleTextField.delegate = self
         self.view.addSubview(sampleTextField)
         
         UILabel; *lbl2 = [[UILabel alloc],init;]
@@ -54,7 +53,6 @@ class new: UIViewController {
         sampleTextField2.returnKeyType = UIReturnKeyType.Done
         sampleTextField2.clearButtonMode = UITextFieldViewMode.WhileEditing;
         sampleTextField2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-        sampleTextField2.delegate = self
         self.view.addSubview(sampleTextField)
         
         let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
@@ -83,7 +81,7 @@ class new: UIViewController {
         lbl3.backgroundColor=[UIColor clearColor];
         lbl3.textColor=[UIColor whiteColor];
         lbl3.userInteractionEnabled=NO;
-        lbl3.text= @"=";
+        lbl3.text = @ "equals";
         lbl3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
         [self.view addSubview:lbl1];
         
