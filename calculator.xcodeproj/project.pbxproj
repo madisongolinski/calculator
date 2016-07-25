@@ -23,7 +23,7 @@
 		B43964DE1D1AF11400BD9594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B43964E11D1AF11400BD9594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B43964E31D1AF11400BD9594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4E22B361D244284007547EE /* new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = new.swift; sourceTree = "<group>"; };
+		B4E22B361D244284007547EE /* new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = new.swift; path = ../new.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,6 @@
 		B43964CB1D1AF11400BD9594 = {
 			isa = PBXGroup;
 			children = (
-				B4E22B361D244284007547EE /* new.swift */,
 				B43964D61D1AF11400BD9594 /* calculator */,
 				B43964D51D1AF11400BD9594 /* Products */,
 			);
@@ -59,6 +58,7 @@
 			children = (
 				B43964D71D1AF11400BD9594 /* AppDelegate.swift */,
 				B43964D91D1AF11400BD9594 /* ViewController.swift */,
+				B4E22B361D244284007547EE /* new.swift */,
 				B43964DB1D1AF11400BD9594 /* Main.storyboard */,
 				B43964DE1D1AF11400BD9594 /* Assets.xcassets */,
 				B43964E01D1AF11400BD9594 /* LaunchScreen.storyboard */,

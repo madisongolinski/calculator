@@ -14,14 +14,19 @@ class new: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
-        UILabel; *lbl1 = [[UILabel alloc],init;]
-        /*important--------- */lbl1.textColor = [UIColor blackColor];
-        [lbl1 setFrame:position];
-        lbl1.backgroundColor=[UIColor clearColor];
-        lbl1.textColor=[UIColor whiteColor];
-        lbl1.userInteractionEnabled=NO;
-        lbl1.text= @"Calculator";
-        [self.view addSubview:lbl1];
+        var lbl1: UILabel = UILabel()
+        lbl1.frame = CGRectMake(0, 0, 100, 100)
+        lbl1.text = "Calculator"
+        view.addSubview(lbl1)
+        
+//        UILabel; *lbl1 = [[UILabel alloc],init;]
+//        /*important--------- */lbl1.textColor = [UIColor blackColor];
+//        [lbl1 setFrame:position];
+//        lbl1.backgroundColor=[UIColor clearColor];
+//        lbl1.textColor=[UIColor whiteColor];
+//        lbl1.userInteractionEnabled=NO;
+//        lbl1.text= @"Calculator";
+//        [self.view addSubview:lbl1];
         
         let sampleTextField = UITextField(frame: CGRectMake(20, 100, 300, 40))
         sampleTextField.placeholder = ""
@@ -34,15 +39,15 @@ class new: UIViewController {
         sampleTextField.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(sampleTextField)
         
-        UILabel; *lbl2 = [[UILabel alloc],init;]
-        /*important--------- */lbl1.textColor = [UIColor blackColor];
-        [lbl2 setFrame:position];
-        lbl2.backgroundColor=[UIColor clearColor];
-        lbl2.textColor=[UIColor whiteColor];
-        lbl2.userInteractionEnabled=NO;
-        lbl2.text= @"*";
-        lbl2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-        [self.view addSubview:lbl1];
+//        UILabel; *lbl2 = [[UILabel alloc],init;]
+//        /*important--------- */lbl1.textColor = [UIColor blackColor];
+//        [lbl2 setFrame:position];
+//        lbl2.backgroundColor=[UIColor clearColor];
+//        lbl2.textColor=[UIColor whiteColor];
+//        lbl2.userInteractionEnabled=NO;
+//        lbl2.text= @"*";
+//        lbl2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+//        [self.view addSubview:lbl1];
         
         let sampleTextField2 = UITextField(frame: CGRectMake(20, 100, 300, 40))
         sampleTextField2.placeholder = ""
@@ -64,26 +69,20 @@ class new: UIViewController {
         let button3 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button3.backgroundColor = .greenColor()
         button3.setTitle("Calculate", forState: .Normal)
-        button3.addTarget(self, action: Selector("Action:"), forControlEvents: UIControlEvents.TouchUpInside)
+        button3.addTarget(self, action: #selector(calculateAnswer), forControlEvents: .TouchUpInside)
         self.view.addSubview(button3)
         
-        func textView() {
-            let textView = UITextView(frame: CGRectMake(20.0, 30.0, 300.0, 30.0))
-            textView.textAlignment = NSTextAlignment.Center
-            textView.textColor = UIColor.blueColor()
-            textView.backgroundColor = UIColor.redColor()
-            self.view.addSubview(textView)
-        }
+
         
-        UILabel; *lbl3 = [[UILabel alloc],init;]
-        /*important--------- */lbl1.textColor = [UIColor blackColor];
-        [lbl3 setFrame:position];
-        lbl3.backgroundColor=[UIColor clearColor];
-        lbl3.textColor=[UIColor whiteColor];
-        lbl3.userInteractionEnabled=NO;
-        lbl3.text = @ "equals";
-        lbl3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-        [self.view addSubview:lbl1];
+//        UILabel; *lbl3 = [[UILabel alloc],init;]
+//        /*important--------- */lbl1.textColor = [UIColor blackColor];
+//        [lbl3 setFrame:position];
+//        lbl3.backgroundColor=[UIColor clearColor];
+//        lbl3.textColor=[UIColor whiteColor];
+//        lbl3.userInteractionEnabled=NO;
+//        lbl3.text = @ "equals";
+//        lbl3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+//        [self.view addSubview:lbl1];
         
         let button1 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button1.backgroundColor = .greenColor()
@@ -96,32 +95,27 @@ class new: UIViewController {
         button.setTitle("Next", forState: .Normal)
         button.addTarget(self, action: Selector("Action:"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
+        
+        let closeButton = UIButton(frame: CGRectMake(self.view.frame.size.width-100, 20, 60, 40))
+        closeButton.backgroundColor = UIColor.redColor()
+        closeButton.setTitle("Close", forState: .Normal)
+        closeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        closeButton.addTarget(self, action: #selector(closeView), forControlEvents: .TouchUpInside)
+        view.addSubview(closeButton)
     
+    }
+    
+    func closeView(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func calculateAnswer() {
+        print("Button tapped, do something")
     }
     
     
     func buttonAction(sender: UIButton!) {
         print("Button tapped, do something")
     }
-        
-        // Do any additional setup after loading the view.
-    
-
-    func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 
 }
