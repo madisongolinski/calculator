@@ -14,33 +14,14 @@ class new: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
-<<<<<<< HEAD
-        UILabel; *lbl1 = [[UILabel alloc],init;]
-        /*important--------- */lbl1.textColor = [UIColor blackColor];
-        [lbl1 setFrame:position];
-        lbl1.backgroundColor=[UIColor clearColor];
-        lbl1.textColor=[UIColor whiteColor];
-        lbl1.userInteractionEnabled=NO;
-        lbl1.text = @"Calculator";
-        [self.view addSubview:lbl1];
-=======
-        var lbl1: UILabel = UILabel()
-        lbl1.frame = CGRectMake(0, 0, 100, 100)
+        let lbl1: UILabel = UILabel()
+        lbl1.frame = CGRectMake(150, 50, 80, 20)
         lbl1.text = "Calculator"
         view.addSubview(lbl1)
+    
         
-//        UILabel; *lbl1 = [[UILabel alloc],init;]
-//        /*important--------- */lbl1.textColor = [UIColor blackColor];
-//        [lbl1 setFrame:position];
-//        lbl1.backgroundColor=[UIColor clearColor];
-//        lbl1.textColor=[UIColor whiteColor];
-//        lbl1.userInteractionEnabled=NO;
-//        lbl1.text= @"Calculator";
-//        [self.view addSubview:lbl1];
->>>>>>> c6bfe030eaa755fbde30924095ae68533bfb1e6e
-        
-        let sampleTextField = UITextField(frame: CGRectMake(20, 100, 300, 40))
-        sampleTextField.placeholder = ""
+        let sampleTextField = UITextField(frame: CGRectMake(20, 150, 100, 25))
+        sampleTextField.placeholder = "first number"
         sampleTextField.font = UIFont.systemFontOfSize(15)
         sampleTextField.borderStyle = UITextBorderStyle.RoundedRect
         sampleTextField.autocorrectionType = UITextAutocorrectionType.No
@@ -49,31 +30,30 @@ class new: UIViewController {
         sampleTextField.clearButtonMode = UITextFieldViewMode.WhileEditing;
         sampleTextField.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(sampleTextField)
+            
+        let lbl2: UILabel = UILabel()
+        lbl2.frame = CGRectMake(175, 75, 100, 100)
+        lbl2.text = "*"
+        view.addSubview(lbl2)
         
-<<<<<<< HEAD
-        UILabel; *lbl2 = [[UILabel alloc],init;]
-        /*important--------- */lbl1.textColor = [UIColor blackColor];
-        [lbl2 setFrame:position];
-        lbl2.backgroundColor=[UIColor clearColor];
-        lbl2.textColor=[UIColor whiteColor];
-        lbl2.userInteractionEnabled=NO;
-        lbl2.text = @"*";
-        lbl2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-        [self.view addSubview:lbl1];
-=======
-//        UILabel; *lbl2 = [[UILabel alloc],init;]
-//        /*important--------- */lbl1.textColor = [UIColor blackColor];
-//        [lbl2 setFrame:position];
-//        lbl2.backgroundColor=[UIColor clearColor];
-//        lbl2.textColor=[UIColor whiteColor];
-//        lbl2.userInteractionEnabled=NO;
-//        lbl2.text= @"*";
-//        lbl2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-//        [self.view addSubview:lbl1];
->>>>>>> c6bfe030eaa755fbde30924095ae68533bfb1e6e
+        let lbl3: UILabel = UILabel()
+        lbl3.frame = CGRectMake(175, 100, 100, 100)
+        lbl3.text = "/"
+        view.addSubview(lbl3)
+            
+        let lbl4: UILabel = UILabel()
+        lbl4.frame = CGRectMake(175, 125, 100, 100)
+        lbl4.text = "+"
+        view.addSubview(lbl4)
+            
+        let lbl5: UILabel = UILabel()
+        lbl5.frame = CGRectMake(175, 150, 100, 100)
+        lbl5.text = "-"
+        view.addSubview(lbl5)
         
-        let sampleTextField2 = UITextField(frame: CGRectMake(20, 100, 300, 40))
-        sampleTextField2.placeholder = ""
+        
+        let sampleTextField2 = UITextField(frame: CGRectMake(500, 150, 100, 25))
+        sampleTextField2.placeholder = "second"
         sampleTextField2.font = UIFont.systemFontOfSize(15)
         sampleTextField2.borderStyle = UITextBorderStyle.RoundedRect
         sampleTextField2.autocorrectionType = UITextAutocorrectionType.No
@@ -82,44 +62,39 @@ class new: UIViewController {
         sampleTextField2.clearButtonMode = UITextFieldViewMode.WhileEditing;
         sampleTextField2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         self.view.addSubview(sampleTextField)
+        //this text field doesnt show up
         
-        let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        let button2 = UIButton(frame: CGRect(x: 105, y: 220, width: 150, height: 25))
         button2.backgroundColor = .greenColor()
         button2.setTitle("Change Function", forState: .Normal)
-        button2.addTarget(self, action: Selector("Action:"), forControlEvents: UIControlEvents.TouchUpInside)
+        button2.addTarget(self, action: #selector(changeFunction), forControlEvents: .TouchUpInside)
         self.view.addSubview(button2)
         
-        let button3 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        let button3 = UIButton(frame: CGRect(x: 125, y: 250, width: 100, height: 25))
         button3.backgroundColor = .greenColor()
         button3.setTitle("Calculate", forState: .Normal)
         button3.addTarget(self, action: #selector(calculateAnswer), forControlEvents: .TouchUpInside)
         self.view.addSubview(button3)
         
-
+        let lbl6: UILabel = UILabel()
+        lbl6.frame = CGRectMake(175, 300, 50, 50)
+        lbl6.text = "="
+        view.addSubview(lbl5)
+        //this label doesnt show up
         
-//        UILabel; *lbl3 = [[UILabel alloc],init;]
-//        /*important--------- */lbl1.textColor = [UIColor blackColor];
-//        [lbl3 setFrame:position];
-//        lbl3.backgroundColor=[UIColor clearColor];
-//        lbl3.textColor=[UIColor whiteColor];
-//        lbl3.userInteractionEnabled=NO;
-//        lbl3.text = @ "equals";
-//        lbl3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-//        [self.view addSubview:lbl1];
+        let lbl7: UILabel = UILabel()
+        lbl7.frame = CGRectMake(0, 500, 50, 50)
+        lbl7.text = "result"
+        view.addSubview(lbl5)
         
-        let button1 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        let button1 = UIButton(frame: CGRect(x: 150, y: 550, width: 50, height: 25))
         button1.backgroundColor = .greenColor()
         button1.setTitle("Clear", forState: .Normal)
-        button1.addTarget(self, action: Selector("Action:"), forControlEvents: UIControlEvents.TouchUpInside)
+        button1.addTarget(self, action: #selector(clear), forControlEvents: .TouchUpInside)
         self.view.addSubview(button1)
         
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button.backgroundColor = .greenColor()
-        button.setTitle("Next", forState: .Normal)
-        button.addTarget(self, action: Selector("Action:"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)
         
-        let closeButton = UIButton(frame: CGRectMake(self.view.frame.size.width-100, 20, 60, 40))
+        let closeButton = UIButton(frame: CGRect(x: 150, y: 600, width: 50, height: 25))
         closeButton.backgroundColor = UIColor.redColor()
         closeButton.setTitle("Close", forState: .Normal)
         closeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
@@ -133,17 +108,47 @@ class new: UIViewController {
     }
     
     func calculateAnswer() {
+        let firstValue = Int(sampleTextField.text!)!
+        let secondValue = Int(sampleTextField2.text!)!
+        
+        if equationState == "*" {
+            let result = firstValue * secondValue
+            
+            lbl7.text = "The answer is \(result)!"
+        } else {
+            if equationState == "/" {
+                let result = firstValue / secondValue
+                
+                ResultLabel.text = "The answer is \(result)!"
+            } else {
+                if equationState == "+" {
+                    let result = firstValue + secondValue
+                    
+                    ResultLabel.text = "The answer is \(result)!"
+                    
+                } else {
+                    if equationState == "-" {
+                        let result = firstValue - secondValue
+                        
+                        ResultLabel.text = "The answer is \(result)!"
+                    }
+    // so if the result label is lbl7 do i have to redeclare it, along with all these other identifiers? 
+                    
+    func changeFunction(){
         print("Button tapped, do something")
     }
     
-<<<<<<< HEAD
+    func clear(){
+        print("Button tapped, do something")
+    }
+    
 
-    override func didReceiveMemoryWarning() {
+
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-=======
->>>>>>> c6bfe030eaa755fbde30924095ae68533bfb1e6e
+
     
     func buttonAction(sender: UIButton!) {
         print("Button tapped, do something")
