@@ -18,22 +18,32 @@ class new: UIViewController {
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
     
-    @IBOutlet weak var sampleTextField: UITextField!
-    @IBOutlet weak var sampleTextField2: UITextField!
-    @IBOutlet weak var ResultLabel: UILabel!
+    var sampleTextField: UITextField = UITextField()
+    var sampleTextField2: UITextField = UITextField()
+    var ResultLabel: UILabel = UILabel()
     
-    @IBOutlet weak var multiply: UILabel!
-    @IBOutlet weak var divide: UILabel!
-    @IBOutlet weak var add: UILabel!
-    @IBOutlet weak var subtract: UILabel!
+    var multiply: UILabel = UILabel()
+    var divide: UILabel = UILabel()
+    var add: UILabel = UILabel()
+    var subtract: UILabel = UILabel()
     
     var equationState: String = String()
     
     var labels:[UILabel]=[]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColorFromHex(0xE4F1FE)
+        
+        labels.append(multiply)
+        labels.append(divide)
+        labels.append(add)
+        labels.append(subtract)
+        
+        equationState = "-"
+        
+    
         
         let lbl1: UILabel = UILabel()
         lbl1.frame = CGRectMake(150, 50, 80, 20)
@@ -41,7 +51,7 @@ class new: UIViewController {
         view.addSubview(lbl1)
     
         
-        let sampleTextField = UITextField(frame: CGRectMake(20, 150, 125, 25))
+        sampleTextField = UITextField(frame: CGRectMake(20, 150, 125, 25))
         sampleTextField.placeholder = "first number"
         sampleTextField.font = UIFont.systemFontOfSize(15)
         sampleTextField.borderStyle = UITextBorderStyle.RoundedRect
@@ -52,28 +62,25 @@ class new: UIViewController {
         sampleTextField.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(sampleTextField)
             
-        let lbl2: UILabel = UILabel()
-        lbl2.frame = CGRectMake(185, 75, 100, 100)
-        lbl2.text = "*"
-        view.addSubview(lbl2)
+    
+        multiply.frame = CGRectMake(185, 75, 100, 100)
+        multiply.text = "*"
+        view.addSubview(multiply)
         
-        let lbl3: UILabel = UILabel()
-        lbl3.frame = CGRectMake(185, 100, 100, 100)
-        lbl3.text = "/"
-        view.addSubview(lbl3)
+        divide.frame = CGRectMake(185, 100, 100, 100)
+        divide.text = "/"
+        view.addSubview(divide)
             
-        let lbl4: UILabel = UILabel()
-        lbl4.frame = CGRectMake(185, 125, 100, 100)
-        lbl4.text = "+"
-        view.addSubview(lbl4)
-            
-        let lbl5: UILabel = UILabel()
-        lbl5.frame = CGRectMake(185, 150, 100, 100)
-        lbl5.text = "-"
-        view.addSubview(lbl5)
+        add.frame = CGRectMake(185, 125, 100, 100)
+        add.text = "+"
+        view.addSubview(add)
+        
+        subtract.frame = CGRectMake(185, 150, 100, 100)
+        subtract.text = "-"
+        view.addSubview(subtract)
         
         
-        let sampleTextField2 = UITextField(frame: CGRectMake(self.view.frame.size.width-145, 150, 125, 25))
+        sampleTextField2 = UITextField(frame: CGRectMake(self.view.frame.size.width-145, 150, 125, 25))
         sampleTextField2.placeholder = "second number"
         sampleTextField2.font = UIFont.systemFontOfSize(15)
         sampleTextField2.borderStyle = UITextBorderStyle.RoundedRect
@@ -91,40 +98,39 @@ class new: UIViewController {
         button2.addTarget(self, action: #selector(changeFunction), forControlEvents: .TouchUpInside)
         self.view.addSubview(button2)
         
-        let button3 = UIButton(frame: CGRect(x: 150, y: 250, width: 100, height: 25))
+        let button3 = UIButton(frame: CGRect(x: 145, y: 250, width: 100, height: 25))
         button3.backgroundColor = UIColorFromHex(0x89C4F4)
         button3.setTitle("Calculate", forState: .Normal)
         button3.addTarget(self, action: #selector(calculateAnswer), forControlEvents: .TouchUpInside)
         self.view.addSubview(button3)
         
         let lbl6: UILabel = UILabel()
-        lbl6.frame = CGRectMake(175, 300, 50, 50)
+        lbl6.frame = CGRectMake(185, 300, 50, 50)
         lbl6.text = "="
         view.addSubview(lbl6)
         //this label doesnt show up
         
-        let lbl7: UILabel = UILabel()
-        lbl7.frame = CGRectMake(155, 400, 50, 50)
-        lbl7.text = ""
-        view.addSubview(lbl7)
+        ResultLabel.frame = CGRectMake(125, 400, 175, 50)
+        ResultLabel.text = ""
+        view.addSubview(ResultLabel)
         
-        let button1 = UIButton(frame: CGRect(x: 140, y: 550, width: 50, height: 25))
+        let button1 = UIButton(frame: CGRect(x: 165, y: 550, width: 50, height: 25))
         button1.backgroundColor = UIColorFromHex(0x89C4F4)
         button1.setTitle("Clear", forState: .Normal)
         button1.addTarget(self, action: #selector(clear), forControlEvents: .TouchUpInside)
         self.view.addSubview(button1)
         
         
-        let closeButton = UIButton(frame: CGRect(x: 150, y: 600, width: 50, height: 25))
-        closeButton.backgroundColor = UIColorFromHex(0x89C4F4)
-        closeButton.setTitle("Close", forState: .Normal)
-        closeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        closeButton.addTarget(self, action: #selector(closeView), forControlEvents: .TouchUpInside)
-        view.addSubview(closeButton)
+        let backButton = UIButton(frame: CGRect(x: 165, y: 600, width: 50, height: 25))
+        backButton.backgroundColor = UIColorFromHex(0x89C4F4)
+        backButton.setTitle("Close", forState: .Normal)
+        backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        backButton.addTarget(self, action: #selector(backView), forControlEvents: .TouchUpInside)
+        view.addSubview(backButton)
     
     }
     
-    func closeView(){
+    func backView(){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -172,9 +178,20 @@ class new: UIViewController {
         default:
             print("")
         }
-
+        
+        for i in labels {
+            if i.text == equationState {
+                i.textColor = UIColor.redColor()
+            }
+            else {
+                i.textColor = UIColor.blackColor()
+            }
+        }
+        
+        
     }
-    
+
+
     func clear(){
         print("Button tapped, do something")
         sampleTextField.text = ""
