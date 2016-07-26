@@ -9,6 +9,19 @@
 import UIKit
 
 class new: UIViewController {
+    
+    @IBOutlet weak var Value1: UITextField!
+    @IBOutlet weak var Value2: UITextField!
+    @IBOutlet weak var ResultLabel: UILabel!
+    
+    @IBOutlet weak var multiply: UILabel!
+    @IBOutlet weak var divide: UILabel!
+    @IBOutlet weak var add: UILabel!
+    @IBOutlet weak var subtract: UILabel!
+    
+    var equationState: String = String()
+    
+    var labels:[UILabel]=[]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,13 +78,13 @@ class new: UIViewController {
         //this text field doesnt show up
         
         let button2 = UIButton(frame: CGRect(x: 105, y: 220, width: 150, height: 25))
-        button2.backgroundColor = .greenColor()
+        button2.backgroundColor = .blueColor()
         button2.setTitle("Change Function", forState: .Normal)
         button2.addTarget(self, action: #selector(changeFunction), forControlEvents: .TouchUpInside)
         self.view.addSubview(button2)
         
         let button3 = UIButton(frame: CGRect(x: 125, y: 250, width: 100, height: 25))
-        button3.backgroundColor = .greenColor()
+        button3.backgroundColor = .blueColor()
         button3.setTitle("Calculate", forState: .Normal)
         button3.addTarget(self, action: #selector(calculateAnswer), forControlEvents: .TouchUpInside)
         self.view.addSubview(button3)
@@ -88,7 +101,7 @@ class new: UIViewController {
         view.addSubview(lbl5)
         
         let button1 = UIButton(frame: CGRect(x: 150, y: 550, width: 50, height: 25))
-        button1.backgroundColor = .greenColor()
+        button1.backgroundColor = .blueColor()
         button1.setTitle("Clear", forState: .Normal)
         button1.addTarget(self, action: #selector(clear), forControlEvents: .TouchUpInside)
         self.view.addSubview(button1)
@@ -107,14 +120,15 @@ class new: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func calculateAnswer() {
-        let firstValue = Int(sampleTextField.text!)!
-        let secondValue = Int(sampleTextField2.text!)!
+    func calculateAnswer(){
+        print("Button tapped, do something")
+        let firstValue = Int(Value1.text!)!
+        let secondValue = Int(Value2.text!)!
         
         if equationState == "*" {
             let result = firstValue * secondValue
             
-            lbl7.text = "The answer is \(result)!"
+            ResultLabel.text = "The answer is \(result)!"
         } else {
             if equationState == "/" {
                 let result = firstValue / secondValue
@@ -132,8 +146,10 @@ class new: UIViewController {
                         
                         ResultLabel.text = "The answer is \(result)!"
                     }
-    // so if the result label is lbl7 do i have to redeclare it, along with all these other identifiers? 
-                    
+                }
+            }
+        }
+    }
     func changeFunction(){
         print("Button tapped, do something")
     }
@@ -144,7 +160,7 @@ class new: UIViewController {
     
 
 
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -153,5 +169,4 @@ class new: UIViewController {
     func buttonAction(sender: UIButton!) {
         print("Button tapped, do something")
     }
-
 }
