@@ -76,8 +76,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculate(sender: AnyObject) {
-        var firstValue = Int(Value1.text!)!
-        var secondValue = Int(Value2.text!)!
+        let firstValue = Int(Value1.text!)!
+        let secondValue = Int(Value2.text!)!
         
                 if equationState == "*" {
                        let result = firstValue * secondValue
